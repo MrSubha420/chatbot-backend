@@ -14,7 +14,6 @@ const port = process.env.PORT || 3001; // Must match frontend's API_URL port
 app.use(cors({
   origin: [
     'https://codewithsubhadip.vercel.app', // Alternative localhost
-    'http://localhost:3000',
    
   ],
   methods: ['POST', 'GET'],
