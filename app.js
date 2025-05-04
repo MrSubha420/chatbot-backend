@@ -13,10 +13,8 @@ const port = process.env.PORT || 3001; // Must match frontend's API_URL port
 // CORS configuration for local development
 app.use(cors({
   origin: [
-    'http://localhost:5173', // Default Vite frontend
-    'http://127.0.0.1:5173', // Alternative localhost
-    'http://localhost:3000',
-    'http://192.168.0.139:5173' // Common Create-React-App port
+    'https://codewithsubhadip.vercel.app', // Alternative localhost
+   
   ],
   methods: ['POST', 'GET'],
   credentials: true
