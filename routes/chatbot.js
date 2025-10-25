@@ -11,7 +11,7 @@ router.post('/', async (req, res) => {
     
     if (!message) {
       return res.status(400).json({ 
-        error: "Hey! What would you like to know about Ashim?" 
+        error: "Hey! What would you like to know about Subhadip?" 
       });
     }
 
