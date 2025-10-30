@@ -134,29 +134,51 @@ At home, my family and friends bring me joy and remind me to enjoy the simple th
     // 🕒 Class Routine Data
     // ===============================
 const routineData = `
-**Class Routine (CSE 3rd Year):**
+**Subhadip Manna - Weekly Class Routine**
 
-| Time Slot | Class / Activity |
-|------------|------------------|
-| 10:20 AM – 11:05 AM | Operating Systems (CSE 3rd Year) |
-| 11:05 AM – 11:50 AM | — |
-| 11:50 AM – 12:35 PM | Compiler Design (SM) |
-| 12:35 PM – 1:20 PM | IT Workshop (Python) G-B / Operating Systems (CSE 3rd Year) |
-| 1:20 PM – 1:45 PM | **BREAK** |
-| 1:45 PM – 2:30 PM | Operating Systems Lab (CSE 3rd Year) / GR-2 (Computer Lab)(SM) |
-| 2:30 PM – 3:15 PM | GR-6 (Computer Lab)(SM) |
-| 3:15 PM – 4:00 PM | GR-1 (Computer Lab)(SM) |
-| 4:00 PM – 5:20 PM | Club Activities |
+---
 
-**Subjects & Labs:**
-- Operating Systems (CSE 3rd Year)
-- Compiler Design (SM)
-- IT Workshop (Python) G-B
-- Operating Systems Lab (CSE 3rd Year)
-- Computer Labs: GR-1, GR-2, GR-6
-- Club Activities
+### 🗓 Monday
+- **1:45 PM – 4:00 PM:** Operating Systems Lab (CSE 3rd Year)
+- **After 4:00 PM:** Club Activities
+
+---
+
+### 🗓 Tuesday
+- **10:20 AM – 11:05 AM:** Operating Systems (CSE 3rd Year)
+- **11:50 AM – 12:35 PM:** Compiler Design (CSE 3rd Year)
+- **1:45 PM – 4:00 PM:** GR-2 (Computer Lab)
+- **After 4:00 PM:** Club Activities
+
+---
+
+### 🗓 Wednesday
+- **11:05 AM – 11:50 AM:** IT Workshop (Python) – CSE 2nd Year (G-B)
+- **After 4:00 PM:** Club Activities
+
+---
+
+### 🗓 Thursday
+- **11:05 AM – 11:50 AM:** Operating Systems (CSE 3rd Year)
+- **1:45 PM – 4:00 PM:** GR-6 (Computer Lab)
+- **After 4:00 PM:** Club Activities
+
+---
+
+### 🗓 Friday
+- **10:20 AM – 11:05 AM:** Compiler Design (CSE 3rd Year)
+- **1:45 PM – 4:00 PM:** GR-1 (Computer Lab)
+- **After 4:00 PM:** Club Activities
+
+---
+
+### 📘 Total Weekly Load
+- **Total Theory Subjects:** 2 (Operating Systems, Compiler Design)
+- **Total Lab Subjects:** 3 (Operating Systems Lab, Python Programming, C Programming Lab)
+- **Theory Hours:** 6  
+- **Lab Hours:** 15  
+- **Total:** 21 Hours/Week
 `;
-
     // Combine resume and routine data
     const fullProfileData = `${resumeData}\n\n${routineData}`;
 
