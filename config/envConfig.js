@@ -6,7 +6,7 @@ module.exports = {
     env: process.env.NODE_ENV || 'development'
   },
   gemini: {
-    apiKey: process.env.GEMINI_API_KEY || 'AIzaSyC_IwWldy7KHlcy73b-cF5Ui8meF_WYY_8',
+    apiKey: process.env.GEMINI_API_KEY || '',
     model: process.env.GEMINI_MODEL || 'gemini-2.5-flash'
   }
 };
