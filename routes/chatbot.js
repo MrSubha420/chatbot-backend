@@ -15,6 +15,12 @@ router.post('/', async (req, res) => {
       });
     }
 
+    if (!process.env.GEMINI_API_KEY) {
+      return res.status(500).json({
+        error: "Server is missing GEMINI_API_KEY. Add a valid key in .env and restart backend."
+      });
+    }
+
     // Initialize Gemini AI
     const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
     const model = genAI.getGenerativeModel({
@@ -211,6 +217,15 @@ const routineData = `
 
   } catch (error) {
     console.error('Chat Error:', error);
+
+    // Gemini API auth/config issues should not look like generic server crashes.
+    if (error?.status === 403) {
+      return res.status(502).json({
+        error: "Gemini API rejected the key (possibly leaked/invalid). Generate a new API key, update GEMINI_API_KEY in .env, and restart server.",
+        technical: process.env.NODE_ENV === 'development' ? error.message : undefined
+      });
+    }
+
     return res.status(500).json({
       error: "Oops! My circuits are buzzing. Try again?",
       technical: process.env.NODE_ENV === 'development' ? error.message : undefined

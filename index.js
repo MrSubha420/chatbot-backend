@@ -12,7 +12,7 @@ const port = process.env.PORT || 3001; // Must match frontend's API_URL port
 
 // CORS configuration for local development
 const corsOptions = {
-  origin: 'https://codewithsubhadip.vercel.app',
+  origin: 'http://localhost:5173',
   methods: ['POST', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],
 };
