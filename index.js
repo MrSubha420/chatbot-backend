@@ -12,7 +12,7 @@ const port = process.env.PORT || 3001; // Must match frontend's API_URL port
 
 // CORS configuration for local development
 const corsOptions = {
-  origin: 'http://localhost:5173',
+  origin: 'https://codewithsubhadip.vercel.app',
   methods: ['POST', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],
 };
@@ -24,7 +24,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // Ensure required CORS headers are sent before /api/chat handlers.
 app.use('/api/chat', (req, res, next) => {
-  res.header('Access-Control-Allow-Origin', 'http://localhost:5173');
+  res.header('Access-Control-Allow-Origin', 'https://codewithsubhadip.vercel.app');
   res.header('Access-Control-Allow-Methods', 'POST, OPTIONS');
   res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
 
