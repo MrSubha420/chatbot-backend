@@ -10,9 +10,19 @@ dotenv.config();
 const app = express();
 const port = process.env.PORT || 3001; // Must match frontend's API_URL port
 
-// CORS configuration for local development
+const allowedOrigins = [
+   'https://codewithsubhadip.vercel.app',
+  process.env.CORS_ORIGIN,
+].filter(Boolean);
+
 const corsOptions = {
-  origin: 'https://codewithsubhadip.vercel.app',
+  origin(origin, callback) {
+    // Allow non-browser tools (no Origin header) and known frontend origins.
+    if (!origin || allowedOrigins.includes(origin)) {
+      return callback(null, true);
+    }
+    return callback(new Error(`CORS blocked origin: ${origin}`));
+  },
   methods: ['POST', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],
 };
@@ -24,9 +34,13 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // Ensure required CORS headers are sent before /api/chat handlers.
 app.use('/api/chat', (req, res, next) => {
-  res.header('Access-Control-Allow-Origin', 'https://codewithsubhadip.vercel.app');
+  const requestOrigin = req.headers.origin;
+  if (requestOrigin && allowedOrigins.includes(requestOrigin)) {
+    res.header('Access-Control-Allow-Origin', requestOrigin);
+  }
   res.header('Access-Control-Allow-Methods', 'POST, OPTIONS');
   res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+  res.header('Vary', 'Origin');
 
   if (req.method === 'OPTIONS') {
     return res.sendStatus(204);
